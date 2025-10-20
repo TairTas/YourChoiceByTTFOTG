@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ Панель</title>
+    <link rel="stylesheet" href="admin.style.css">
+</head>
+<body>
+    <div id="password-gate">
+        <h1>Вход в панель администратора</h1>
+        <input type="password" id="password-input" placeholder="Введите пароль">
+        <button id="login-button">Войти</button>
+    </div>
+    <div id="admin-panel" style="display: none;">
+        <header>
+            <h1>Управление</h1>
+            <a href="index.html">← Назад к голосованию</a>
+        </header>
+        <div class="tabs">
+            <button id="tab-questions" class="active">Управление вопросами</button>
+            <button id="tab-answers">Управление ответами</button>
+        </div>
+        <div id="questions-content">
+            <div id="admin-question-list"></div>
+            <div class="actions">
+                <button id="add-question-button">+ Добавить новый вопрос</button>
+                <button id="save-all-button">Сохранить все изменения</button>
+            </div>
+        </div>
+        <div id="answers-content" style="display: none;">
+            <div id="user-answers-list"></div>
+            <div class="actions">
+                <button id="reset-all-users-button">Обнулить ответы ВСЕХ пользователей</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="admin.script.js"></script>
+</body>
+</html>

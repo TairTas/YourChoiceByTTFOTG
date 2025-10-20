@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Твой Выбор!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Модальное окно для ввода имени -->
+    <div id="name-modal-overlay">
+        <div id="name-modal">
+            <h2>Добро пожаловать!</h2>
+            <p>Пожалуйста, введите ваше имя, чтобы мы знали, кто голосует.</p>
+            <input type="text" id="name-input" placeholder="Ваше имя" maxlength="20">
+            <button id="save-name-button">Сохранить</button>
+        </div>
+    </div>
+
+    <!-- Кнопка-гамбургер для меню -->
+    <div id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Боковое меню -->
+    <nav id="side-menu">
+        <h2>Вопросы</h2>
+        <ul id="question-list"></ul>
+        <a href="admin.html" class="admin-link">Админ панель</a>
+    </nav>
+
+    <!-- Основной контент сайта -->
+    <main id="main-content">
+        <h1 id="question-title">Загрузка вопроса...</h1>
+        <div id="total-votes-counter">Всего ответов: 0</div>
+
+        <div class="split-screen" id="split-screen">
+            <!-- Вариант А -->
+            <div class="option" id="optionA" data-choice="A">
+                <img id="imgA" src="https://via.placeholder.com/800x600/333/fff?text=A" alt="Вариант A">
+                <div class="label" id="labelA">Вариант A</div>
+                <div class="result-overlay">
+                    <span class="percent" id="percentA">0%</span>
+                    <span class="count" id="countA">0 голосов</span>
+                </div>
+            </div>
+            <!-- Вариант Б -->
+            <div class="option" id="optionB" data-choice="B">
+                <img id="imgB" src="https://via.placeholder.com/800x600/333/fff?text=B" alt="Вариант B">
+                <div class="label" id="labelB">Вариант B</div>
+                <div class="result-overlay">
+                    <span class="percent" id="percentB">0%</span>
+                    <span class="count" id="countB">0 голосов</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <!-- Наш скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>
